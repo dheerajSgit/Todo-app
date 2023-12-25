@@ -1,27 +1,122 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+    background-color: #F2F2F2;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+}
+html{
+    font-size:62.5%;
+}
+a {
+    text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+li {
+    list-style: none;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 10rem;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+main h2 {
+    font-size: 3rem;
+    font-family: 'Lexend Deca', sans-serif;
+    margin-bottom: 4.8rem;
+}
+
+nav{
+    width: 55rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1rem solid #ccc;
+}
+
+nav a{
+    font-size: 2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #ccc;
+    border-bottom: 0.3rem solid transparent;
+}
+
+nav a:hover {
+    border-color: #3A3845;
+}
+nav a.active {
+    color: #000;
+    border-color: #68B984;
+}
+
+form input{
+    border:.1rem solid #ccc;
+    border-radius:.3rem;
+    width: 45rem;
+    margin:4rem 0;
+    user-focus: none;
+    padding:.6rem 1rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.06rem;
+    font-weight: bold;
+}
+
+form button{
+    padding:.8rem 2.8rem;
+    border: .2rem solid #68B984;
+    border-radius:.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 2.4rem;
+    background-color: #68B984;
+    color:#000;
+}
+
+label{
+    font-size: 1.5rem;
+    letter-spacing: .06rem;
+    color: #3A3845;
+    font-weight: bold;
+}
+
+ul li {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    align-items: center;
+    width: 50rem;
+    min-height: 6rem;
+    border-bottom: .1rem solid #ccc;
+
+}
+
+ul li:first-child{
+    border-top: .1rem solid #ccc;
+}
+ul li:hover{
+    background-color: #FeF2F2;
+}
+
+ul li input[type="checkbox"]:checked + label{
+   text-decoration: line-through;
+    color:#d14d72;
+}
+
+ul li button{
+    padding: .6rem 1rem;
+    width: 7rem;
+    background-color: #D14D72;
+    color: #FFF9F9;
+    border: none;
+    display: inline-block;
+    cursor:pointer;
+    justify-self: center;
+    letter-spacing: .1rem;
 }
